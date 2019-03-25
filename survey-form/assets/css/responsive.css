@@ -1,0 +1,14 @@
+@media screen and (max-width: 499px) {
+  .form .field {
+    flex-direction: column;
+  }
+
+  .form .label {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .form .button {
+    width: 100%;
+  }
+}

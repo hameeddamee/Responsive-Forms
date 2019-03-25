@@ -1,0 +1,263 @@
+body {
+  background-color: #111111;
+  font-family: "Titillium Web", sans-serif;
+  color: white;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.heading {
+  text-align: center;
+  margin: 2em;
+}
+h1#title {
+  font-size: 3em;
+  margin-bottom: 0.1em;
+}
+p#description {
+  font-size: 1em;
+}
+
+.form {
+  margin: 2em;
+  width: calc(100% - 4em);
+}
+
+.form .field {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 0 1.5em 0;
+  justify-content: center;
+}
+
+.form .text-input,
+.form .textarea,
+.form .options,
+.form .checkboxes,
+.form .select {
+  flex: 1 1;
+}
+
+.form .label {
+  flex: 1 1;
+  text-align: right;
+  align-self: center;
+}
+
+.form .label,
+.form .text-input,
+.form .textarea,
+.form .select,
+.form .message,
+.form .button {
+  padding: 0.75em 1em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  line-height: normal;
+  border-radius: 0;
+  border: none;
+  background: none;
+  color: white;
+}
+
+.form .label {
+  font-weight: bold;
+  padding-top: 0;
+  padding-left: 0;
+  letter-spacing: 0.025em;
+  font-size: 0.9em;
+  line-height: 1.25;
+}
+
+.required .form .label:after,
+.form .required .label:after {
+  content: " *";
+  color: #e8474c;
+  font-weight: normal;
+  font-size: 0.75em;
+  vertical-align: top;
+}
+
+.form .text-input,
+.form .textarea,
+.form .select {
+  font: inherit;
+  line-height: normal;
+  background: #222222;
+}
+
+.form .text-input:-webkit-autofill,
+.form .textarea:-webkit-autofill,
+.form .select:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #111111 inset;
+  -webkit-text-fill-color: white;
+  border-top-color: #111111;
+  border-left-color: #111111;
+  border-right-color: #111111;
+}
+
+.form:not(.has-magic-focus) .text-input:active,
+.form:not(.has-magic-focus) .textarea:active,
+.form:not(.has-magic-focus) .select:active,
+.form:not(.has-magic-focus) .text-input:focus,
+.form:not(.has-magic-focus) .textarea:focus,
+.form:not(.has-magic-focus) .select:focus {
+  background: #4e4e4e;
+}
+
+.form .checkboxes,
+.form .options {
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.form .checkbox-input,
+.form .option-input {
+  margin-bottom: 5px;
+}
+
+/* hide the default checkbox & radius */
+input[type="radio"],
+input[type="checkbox"] {
+  opacity: 0;
+}
+
+.form .checkbox-input + label,
+.form .option-input + label {
+  color: white;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.option label::before {
+  border-radius: 50%;
+}
+
+/* Create the custom checkbox & radio */
+.option label::before,
+.checkbox label::before {
+  content: "";
+  left: -24px;
+  top: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #222222;
+  border: 1px solid #222222;
+}
+
+/* Create the custom check */
+.option label::after,
+.checkbox label::after {
+  content: "";
+  height: 6px;
+  width: 9px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+}
+
+/* Create the dot indicator */
+.option label::after {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b9b3b3;
+  border: 1px solid #b9b3b3;
+}
+
+.option label,
+.checkbox label {
+  position: relative;
+}
+
+.checkbox label::before,
+.checkbox label::after {
+  position: absolute;
+}
+
+.option label::before,
+.option label::after {
+  position: absolute;
+}
+
+/*Checkmark*/
+.checkbox label::after {
+  left: -20px;
+  top: 3px;
+}
+/*Checkmark*/
+.option label::after {
+  left: -19px;
+  top: 5px;
+}
+
+/*Hide the checkmark by default*/
+.checkbox input[type="checkbox"] + label::after {
+  content: none;
+}
+.option input[type="radio"] + label::after {
+  content: none;
+}
+
+/*Unhide the checkmark on the checked state*/
+.checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+.option input[type="radio"]:checked + label::after {
+  content: "";
+}
+
+.form .checkbox-input:active + label,
+.form .option-input:active + label,
+.form .checkbox-input:hover + label,
+.form .option-input:hover + label {
+  color: #4e4e4e;
+}
+
+/* Add selected style for option & checkbox label */
+.form .checkbox-input:checked + label,
+.form .option-input:checked + label {
+  color: #b9b3b3;
+}
+/* Add selected style for checkbox */
+.option input[type="radio"]:checked + label::before,
+.checkbox input[type="checkbox"]:checked + label::before {
+  background-color: #4e4e4e;
+  border: 1px solid #4e4e4e;
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox $ radio btn*/
+.option input[type="radio"]:focus + label::before,
+.checkbox input[type="checkbox"]:focus + label::before {
+  outline: rgb(59, 153, 252) auto 5px;
+}
+
+.form .button {
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  background: #e8474c;
+  font-weight: bold;
+  width: 40%;
+  font-weight: bold;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.form .button:hover,
+.form .button:focus,
+.form .button:active {
+  background: #ee868d;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Responsive Survey Form</title>
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  </head>
+
+  <body>
+    <div class="heading">
+      <h1 id="title">Survey Form</h1>
+      <p id="description">Let us know how we can improve freeCodeCamp</p>
+    </div>
+    <hr>
+
+    <form id="survey-form" action='' class='form'>
+      <div class='field required'>
+        <label id="name-label" class='label required' for='name'>Full name: </label>
+        <input class='text-input' id='name' name='name' required type='text' placeholder='Enter full name'>
+      </div>
+      <div class='field required'>
+        <label id="email-label" class='label' for='email'>E-mail: </label>
+        <input class='text-input' id='email' name='email' required type='email' placeholder='Enter email address'>
+      </div>
+      <div class='field required'>
+        <label id="number-label" class='label' for='number'>Age:</label>
+        <input class='text-input' id='number' min="0" max="69" name='number' required type='number'
+          placeholder='Enter your age'>
+      </div>
+      <div class='field'>
+        <label class='label' for='select'>Which option best describes your current role?</label>
+        <select id="dropdown" class='select' id='select'>
+          <option selected value='' disabled>Select an option</option>
+          <option value='student'>Student</option>
+          <option value='full-time-job'>Full Time Job</option>
+          <option value='full-time-learner'>Full Time Learner</option>
+          <option value='prefer-not-to-say'>Prefer not to say</option>
+          <option value='other'>Other</option>
+        </select>
+      </div>
+      <div class='field required'>
+        <label class='label'>How likely is it that you would recommend freeCodeCamp to a friend?</label>
+        <ul class='options'>
+          <li class='option'>
+            <input class='option-input' id='option-0' name='option' type='radio' value='0'>
+            <label class='option-label' for='option-0'>Definitely</label>
+          </li>
+          <li class='option'>
+            <input class='option-input' id='option-1' name='option' type='radio' value='1'>
+            <label class='option-label' for='option-1'>Maybe</label>
+          </li>
+          <li class='option'>
+            <input class='option-input' id='option-2' name='option' type='radio' value='2'>
+            <label class='option-label' for='option-2'>Not sure</label>
+          </li>
+        </ul>
+      </div>
+      <div class='field'>
+        <label class='label' for='select'>What do you like most in FCC</label>
+        <select id="dropdown" class='select' id='select'>
+          <option selected value=''>Select an option</option>
+          <option value='challenges'>Challenges</option>
+          <option value='projects'>Projects</option>
+          <option value='community'>Community</option>
+          <option value='open-source'>Open Source</option>
+        </select>
+      </div>
+      <div class='field'>
+        <label class='label'>Things that should be improved in the future
+          (Check all that apply)</label>
+        <ul class='checkboxes'>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-0' name='choice' type='checkbox' value='0'>
+            <label class='checkbox-label' for='choice-0'>Front-end Projects</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-1' name='choice' type='checkbox' value='1'>
+            <label class='checkbox-label' for='choice-1'>Back-end Projects</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-2' name='choice' type='checkbox' value='2'>
+            <label class='checkbox-label' for='choice-2'>Data Visualization</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-3' name='choice' type='checkbox' value='3'>
+            <label class='checkbox-label' for='choice-3'>Challenges</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-4' name='choice' type='checkbox' value='4'>
+            <label class='checkbox-label' for='choice-4'>Open Source Community</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-5' name='choice' type='checkbox' value='5'>
+            <label class='checkbox-label' for='choice-5'>Gitter help rooms</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-6' name='choice' type='checkbox' value='6'>
+            <label class='checkbox-label' for='choice-6'>Videos</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-7' name='choice' type='checkbox' value='7'>
+            <label class='checkbox-label' for='choice-7'>City Meetups</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-8' name='choice' type='checkbox' value='8'>
+            <label class='checkbox-label' for='choice-8'>Wiki</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-9' name='choice' type='checkbox' value='9'>
+            <label class='checkbox-label' for='choice-9'>Forum</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-10' name='choice' type='checkbox' value='10'>
+            <label class='checkbox-label' for='choice-10'>Additional Courses</label>
+          </li>
+        </ul>
+      </div>
+      <div class='field'>
+        <label class='label' for='about'>Any Comments or Suggestions?</label>
+        <textarea class='textarea' id='about' name='about' rows='4'></textarea>
+      </div>
+      <div class='field'>
+        <button id="submit" class='button' type='submit'>Submit</button>
+      </div>
+    </form>
+
+  </body>
+
+</html>
